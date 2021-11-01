@@ -57,14 +57,14 @@ Output yang kita harapkan adalah algoritma memberikan penilaian dengan berbagai 
 ## Data Preparation
 Pada data yang sudah disediakan ini, data sudah clean tanpa ada yang perlu diseragamkan lagi oleh teknik PCA ataupun Dimension Reduction.
 Data preparation yang kita lakukan ini hanya membagi datatest sebanyak 1:4 yatu 80% data train, 20% data test. Pembagian proporsi ini umum dilakukan untuk mengukur kinerja data baru yang masuk. 
-Selain itu, tahap persiapan data yang kita lakukan adalah standarisasi data dengan menggunakan metode StandarScaler. Prinsipnya adalah standarisasi fitur dengan mengurangkan mean (nilai rata-rata) kemudian membaginya dengan standar deviasiuntuk menggeser distribusi. Tujuannya untuk menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0. Sekitar 68% dari nilai akan berada di antara -1 dan 1.
+Selain itu, tahap persiapan data yang kita lakukan adalah standarisasi data dengan menggunakan metode StandarScaler. Prinsipnya adalah standarisasi fitur dengan mengurangkan mean (nilai rata-rata) kemudian membaginya dengan standar deviasi untuk menggeser distribusi. Tujuannya untuk menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0. Sekitar 68% dari nilai akan berada di antara -1 dan 1.
 
 
 ## Modeling
 Model yang dirancang untuk menyelesaikan masalah ini dengan algoritma SVM. Model ini dipilih karena output yang diharapkan dari hasil prediksi adalah TRUE atau FALSE (dari variable2 yang dimiliki oleh anggur yang didapatkan dari sensor).
 Dengan SVM, maka akan ada klasifikasi hyperlane yang memisahkan antara kategori anggur Good / Bad.\
-Pada uji coba kali ini, model dioptimasi juga dengan metode Grid Search CV. Tujuan optimasi ini untuk menentukan Hyperparameter pada model SVM. GridSearchCV mengambil parameter yang sudah didefinisikan untuk dicoba pada model untuk tahap data training. Dengan hyperparameter yang optimal maka hasil akurasi akan meningkat juga.\
-Hasil akhir dari Model yang dirancang akan mengeluarkan judge kualitas anggur (TRUE/FALSE)
+Pada uji coba kali ini, model dioptimasi juga dengan metode [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html). Tujuan optimasi ini untuk menentukan Hyperparameter pada model SVM. GridSearchCV mengambil parameter yang sudah didefinisikan untuk dicoba pada model untuk tahap data training. Dengan hyperparameter yang optimal maka hasil akurasi akan meningkat juga. Uji coba kali ini, parameter yg akan ditentukan hyperparameternya adalah C, Epsilon, dan Gamma (merujuk pada parameter yang sesuai basic dokumentasi [berikut](https://scikit-learn.org/stable/modules/grid_search.html)\
+Hasil akhir dari Model yang dirancang akan mengeluarkan judge kualitas anggur (TRUE/FALSE). Dikarenakan model yg kita bangun adalah binary classification, maka library yg akan digunakan memakai model SVC. Pada lib SVC, dokumentasi [berikut](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) mencatat bahwa fungsi tidak menggunakan parameter epsilon sehingga parameter tersebut boleh tidak digunakan.
 
 ## Evaluation
 Hasil berikut merupakan model SVM yang sudah dioptimasi dengan menggunakan metode GridSearchCV. Hyperparameter yang yang ditemukan untuk model SVM adalah 'C'= 1, 'epsilon' = 0.1, 'gamma'= 1.\
