@@ -4,25 +4,23 @@
 Proyek Domain di berada di Industri Entertainment khususnya di bidang seni/hiburan.
 Komik merupakan hiburan yang banyak digemari oleh anak muda di jaman sekarang. Selain cerita yang menarik, kemudahan akses melalui telepon genggam juga merupakan faktor tingginya minat di bidang ini. Webtoon adalah platform yang diluncurkan oleh LINE dan dapat diakses dengan gratis.
 
-Pada proyek ini, sistem rekomendasi yang dirancang menggunakan konsep Similarity Measure, yang berarti memberikan saran pengguna mungkin menyukai suatu judul komik berdasarkan yang dibacanya. Proyek ini menggunakan dataset berisi informasi kualitas anggur yang ditentukan oleh beberapa nilai/parameter. Data tersebut didapatkan melalui physicochemical tests dan yang diambil menggunakan sensoris.
+Pada proyek ini, sistem rekomendasi yang dirancang menggunakan konsep Similarity Measure, yang berarti memberikan saran pengguna mungkin menyukai suatu judul komik berdasarkan yang dibacanya. Proyek ini menggunakan dataset berisi detail informasi komik dalam satu judul. Data ini didapatkan dari scrapping yang dilakukan oleh seorang user di Kaggle. Jumlah dataset yang didapat sekitar 568 data.
 
-Melalui model Machine Learning yang dibangun ini, diharapkan membantu sektor pertanian untuk memberikan prediksi kualitas anggur yang baik dari panen.
-Kualitas yang baik tentu akan membuat kehidupan para petani makin sejahtera.
+Melalui model Machine Learning yang dibangun ini, diharapkan pengguna semakin menyukai aplikasi Webtoon dikarenakan rekomendasi yang diberikan tepat sesuai dengan yang mereka sukai. Dengan begitu pengguna lebih mudah dalam mencari hiburan yang mereka butuhkan.
 
 Sumber Refrensi:\
-[Dataset](https://archive.ics.uci.edu/ml/datasets/wine+quality) 
-[Papper](https://www.sciencedirect.com/science/article/abs/pii/S0167923609001377?via%3Dihub)
+[Dataset](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)
+[Papper](https://www.researchgate.net/publication/283148540_MBTI-based_Collaborative_Recommendation_System_A_Case_Study_of_Webtoon_Contents)
 
 
 ## Business Understanding
-Memprediksi kualitas anggur yang baik berdasarkan variable yang dihasilkan oleh sensor. Dengan beraneka variable yang dimiliki maka hasil panen ke depan bisa memperhatikan suatu variable tersebut sebagai indikator utama/kontrol agar menghasilkan hasil panen anggur yg baik sebanyak-banyaknya.
+Dengan sistem rekomendasi yang tepat sesuai dengan prefensi pengguna/pembaca di aplikasi webtoon, maka tingkat kepuasan seseorang terhadap aplikasi webtoon akan semakin tinggi. Line Corporate juga berpotensi menghasilkan keuntungan dengan fitur 'baca lebih awal'. Ketika seseorang sudah menikmati kisah di webtoon, maka pengguna rela juga membayar episode yang seharusnya tayang minggu depan agar bisa dibaca lebih awal.
 
 ### Problem Statements
-Variable apa yang paling mempengaruhi kualitas anggur?\
-Berapa tingkat akurasi yang dihasilkan dengan model machine learning yg dirancang?
+Metode apa yang digunakan untuk menentukan prefensi kesukaan suatu pembaca?
 
 ### Goals
-Hasil prediksi kualitas anggur yang baik dengan akurat
+Rekomendasi judul komik lain yang mungkin disukai pembaca oleh karena menyukai suatu judul komik.
 
 ### Solution statements
 Pada proyek ini, saya membangun dengan model ML SVM. Support Vector Machine adalah algoritma machine learning yang dapat digunakan untuk menyelesaikan permasalahan klasifikasi, regresi, dan pendeteksian outlier. Tujuannya jelas untuk menemukan hyperlane terbaik untuk memisahkan titik data input dengan jelas.
@@ -32,21 +30,20 @@ Karena kita butuh prediksi kualitas anggur baik/tidak, maka kita perlu definisik
 Quality >5 = Good. Selain itu Bad Quality (0-5).
 
 ## Data Understanding
-[Dataset dari UCI Machine LEarning](https://archive.ics.uci.edu/ml/datasets/wine+quality)\
-Keseluruhan Total Data yang tersedia adalah 1599 yang tiap data mempunyai 12 parameter yang akan dijelaskan sebagai berikut:\
+[Dataset dari Kaggle](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)\
+Keseluruhan Total Data yang tersedia adalah 568 judul komik yang tiap data mempunyai 10 parameter yang akan dijelaskan sebagai berikut:\
 
 Input Variable:
-* fixed acidity (Keasaman tetap) 
-* volatile acidity (Keasaman yang 
-* citric acid (Asam Sitrat)
-* residual sugar (Kandungan gula)
-* chlorides (Klorida)
-* free sulfur dioxide (Free SO2)
-* total sulfur dioxide(Total SO2)
-* density (Kekentalan) 
-* pH
-* sulphates (Sulfat) 
-* alcohol (Alkohol)
+* id - Id unik untuk judul tiap komik
+* Name - Judul Komik
+* Writer- Nama Penulis Komik
+* Likes- Jumlah like yang dimiliki
+* genre - Genres Komik
+* rating - Penilian rata-rata suatu pembaca terhadap komik tersebit
+* Subscribers- Jumlah subscribers komik tersebut
+* Summary- Ringkasan isi cerita komik
+* Update - Informasi terbit setiap minggu di hari apa
+* Reading Link- link untuk membaca komik tersebut
 
 Output variable (Based on sensory data):
 * Quality (Kualitas. Bernilai 0-10)\
