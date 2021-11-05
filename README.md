@@ -1,11 +1,10 @@
 # Laporan Proyek Machine Learning – Johanes Andre
 
 ## Domain Proyek
-Proyek Domain di berada di Industri pertanian. 
-Hasil panen merupakan hal yang dinanti oleh para petani. Hasil panen yang baik mampu menentukan keuntungan yang didapat petani ke penadah / penerima hasil panen tersebut.
+Proyek Domain di berada di Industri Entertainment khususnya di bidang seni/hiburan.
+Komik merupakan hiburan yang banyak digemari oleh anak muda di jaman sekarang. Selain cerita yang menarik, kemudahan akses melalui telepon genggam juga merupakan faktor tingginya minat di bidang ini. Webtoon adalah platform yang diluncurkan oleh LINE dan dapat diakses dengan gratis.
 
-Pada proyek ini, hasil panen yang akan dianalisa berupa buah anggur.
-Proyek ini menggunakan dataset berisi informasi kualitas anggur yang ditentukan oleh beberapa nilai/parameter. Data tersebut didapatkan melalui physicochemical tests dan yang diambil menggunakan sensoris.
+Pada proyek ini, sistem rekomendasi yang dirancang menggunakan konsep Similarity Measure, yang berarti memberikan saran pengguna mungkin menyukai suatu judul komik berdasarkan yang dibacanya. Proyek ini menggunakan dataset berisi informasi kualitas anggur yang ditentukan oleh beberapa nilai/parameter. Data tersebut didapatkan melalui physicochemical tests dan yang diambil menggunakan sensoris.
 
 Melalui model Machine Learning yang dibangun ini, diharapkan membantu sektor pertanian untuk memberikan prediksi kualitas anggur yang baik dari panen.
 Kualitas yang baik tentu akan membuat kehidupan para petani makin sejahtera.
