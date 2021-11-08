@@ -6,7 +6,7 @@ Komik merupakan hiburan yang banyak digemari oleh anak muda di jaman sekarang. S
 
 Pada proyek ini, sistem rekomendasi yang dirancang menggunakan konsep Similarity Measure, yang berarti memberikan saran pengguna mungkin menyukai suatu judul komik berdasarkan yang dibacanya. Proyek ini menggunakan dataset berisi detail informasi komik dalam satu judul. Data ini didapatkan dari scrapping yang dilakukan oleh seorang user di Kaggle. Jumlah dataset yang didapat sekitar 568 data.
 
-Melalui model Machine Learning yang dibangun ini, diharapkan pengguna semakin menyukai aplikasi Webtoon dikarenakan rekomendasi yang diberikan tepat sesuai dengan yang mereka sukai. Dengan begitu pengguna lebih mudah dalam mencari hiburan yang mereka butuhkan.
+Melalui model Machine Learning yang dibangun ini, diharapkan pengguna semakin menyukai aplikasi Webtoon dikarenakan rekomendasi yang diberikan tepat sesuai dengan yang mereka sukai. Dengan begitu pengguna lebih mudah dalam mencari hiburan sesuai dengan yang mereka suka.
 
 Sumber Refrensi:\
 [Dataset](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)
@@ -20,14 +20,10 @@ Dengan sistem rekomendasi yang tepat sesuai dengan prefensi pengguna/pembaca di 
 Metode apa yang digunakan untuk menentukan prefensi kesukaan suatu pembaca?
 
 ### Goals
-Rekomendasi judul komik lain yang mungkin disukai pembaca oleh karena menyukai suatu judul komik.
+Rekomendasi judul komik lain yang mungkin disukai pembaca oleh berdasarkan kemiripan yang pernah dibaca .
 
 ### Solution statements
-Pada proyek ini, saya membangun dengan model ML SVM. Support Vector Machine adalah algoritma machine learning yang dapat digunakan untuk menyelesaikan permasalahan klasifikasi, regresi, dan pendeteksian outlier. Tujuannya jelas untuk menemukan hyperlane terbaik untuk memisahkan titik data input dengan jelas.
-Libray yang digunakan menggunakan SVC.
-
-Karena kita butuh prediksi kualitas anggur baik/tidak, maka kita perlu definisikan dulu yang nilai apakah anggur baik atau tidak. Dalam studi kasus ini, definisi nilai parameter yang dimaksud adalah:\
-Quality >5 = Good. Selain itu Bad Quality (0-5).
+Pada proyek ini, saya membangun dengan model rekomendasi menggunakan cosine similarity. Definisi Cosine Similarity menurut [Referensi Jurnal](https://journal.unnes.ac.id/nju/index.php/jte/article/download/10955/6659) berikut adalah mengukur kemiripan antara dua dokumen atau teks. Pada Cosine Similarity dokumen atau teks dianggap sebagai vector. Tujuannya untuk mengukur kosinus sudut antara dua vektor dan menentukan apakah dua vektor menunjuk ke arah yang kira-kira sama. Lihat [Refrensi berikut](https://www.sciencedirect.com/topics/computer-science/cosine-similarity)
 
 ## Data Understanding
 [Dataset dari Kaggle](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)\
@@ -45,46 +41,23 @@ Input Variable:
 * Update - Informasi terbit setiap minggu di hari apa
 * Reading Link- link untuk membaca komik tersebut
 
-Output variable (Based on sensory data):
-* Quality (Kualitas. Bernilai 0-10)\
-Dataset ini merupakan data bersih di mana tidak ada missing value di parameter apapun.\
-Output yang kita harapkan adalah algoritma memberikan penilaian dengan berbagai variable yang dimiliki oleh input baru, anggur tersebut memiliki kualitas seperti apa. Quality adalah target variable
 
 ## Data Preparation
-Pada data yang sudah disediakan ini, data sudah clean tanpa ada yang perlu diseragamkan lagi oleh teknik PCA ataupun Dimension Reduction.
-Data preparation yang kita lakukan ini hanya membagi datatest sebanyak 1:4 yatu 80% data train, 20% data test. Pembagian proporsi ini umum dilakukan untuk mengukur kinerja data baru yang masuk. 
-Selain itu, tahap persiapan data yang kita lakukan adalah standarisasi data dengan menggunakan metode StandarScaler. Prinsipnya adalah standarisasi fitur dengan mengurangkan mean (nilai rata-rata) kemudian membaginya dengan standar deviasi untuk menggeser distribusi. Tujuannya untuk menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0. Sekitar 68% dari nilai akan berada di antara -1 dan 1.
+Data preparation yang kita lakukan adalah preprocessing dengan menghilangkan tanda baca. Pada dataset yang dipunya, kolom summary yang paling banyak mengandung tanda baca. Tujuanny untuk mendapatkan model yang lebih baik.\
+Selain itu, tahap persiapan data yang kita ubah tipe data text menjadi vector dengan CountVectorizer karena cosine similarity dasarnya adalah jarak antara dua vector.
 
 
 ## Modeling
-Model yang dirancang untuk menyelesaikan masalah ini dengan algoritma SVM. Model ini dipilih karena output yang diharapkan dari hasil prediksi adalah TRUE atau FALSE (dari variable2 yang dimiliki oleh anggur yang didapatkan dari sensor).
-Dengan SVM, maka akan ada klasifikasi hyperlane yang memisahkan antara kategori anggur Good / Bad.\
-Pada uji coba kali ini, model dioptimasi juga dengan metode [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html). Tujuan optimasi ini untuk menentukan Hyperparameter pada model SVM. GridSearchCV mengambil parameter yang sudah didefinisikan untuk dicoba pada model untuk tahap data training. Dengan hyperparameter yang optimal maka hasil akurasi akan meningkat juga. Uji coba kali ini, parameter yg akan ditentukan hyperparameternya adalah C, Epsilon, dan Gamma (merujuk pada parameter yang sesuai basic dokumentasi [berikut](https://scikit-learn.org/stable/modules/grid_search.html)\
-Hasil akhir dari Model yang dirancang akan mengeluarkan judge kualitas anggur (TRUE/FALSE). Dikarenakan model yg kita bangun adalah binary classification, maka library yg akan digunakan memakai model SVC. Pada lib SVC, dokumentasi [berikut](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) mencatat bahwa fungsi tidak menggunakan parameter epsilon sehingga parameter tersebut boleh tidak digunakan.
+Model yang dirancang untuk menyelesaikan masalah ini dengan content based filtering. Pada proyek ini, model similarity menggunapan cosine similiratiy. Model ini dipilih karena biasa digunakan untuk mengukur kesamaan dokumen dalam analisis teks.\
+Cosine similarity mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama. Ia menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity. 
 
 ## Evaluation
-Hasil berikut merupakan model SVM yang sudah dioptimasi dengan menggunakan metode GridSearchCV. Hyperparameter yang yang ditemukan untuk model SVM adalah 'C'= 1, 'epsilon' = 0.1, 'gamma'= 1.\
-Hasil dari model yang dibuat dan formula rumus yang digunakan. 
+Hasil berikut merupakan contoh 3 rekomendasi judul webtoon yang didapat dengan menggunakan metode Cosine Similarity.
 
-* **Accuracy: 77.1875**\
-Accuracy = TP+TN/TP+FP+FN+TN
-
-* **Precision: 81.17647058823529**\
-Precision = TP/TP+FP
-
-* **Recall: 77.09497206703911**\
-Recall = TP/TP+FN
-
-Keterangan:
-- TP = True Positif, Hasil yang diprediksi benar sesuai label TRUE
-- TN = True Negatif, Hasil yang diprediksi benar dengan label FALSE
-- FP = False Positif, Hasil yang dinilai benar padahal salah
-- FN = False Negatif, Hasil yang dinilai salah padahal benar
-
-Untuk hasil semua nilai di atas 75% sehingga dapat dikatakan model yang dibangun sudah cukup efektif dan bisa diterima.\
-Sementara confusion matrix yang dihasilkan adalah sbb:\
- [109  32]\
- [ 41 138]
+Karena anda menyukai webtoon  About Death  mungkin kamu juga menyukai ini: 
+1 Death's Game
+2 ShootAround
+3 The Horizon
  
 **---Ini adalah bagian akhir laporan---**
 
