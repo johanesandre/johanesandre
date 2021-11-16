@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning – Johanes Andre
 
-## Domain Proyek
+## Project Overview
 Proyek Domain di berada di Industri Entertainment khususnya di bidang seni/hiburan.
 Komik merupakan hiburan yang banyak digemari oleh anak muda di jaman sekarang. Selain cerita yang menarik, kemudahan akses melalui telepon genggam juga merupakan faktor tingginya minat di bidang ini. Webtoon adalah platform yang diluncurkan oleh LINE dan dapat diakses dengan gratis.
 
@@ -17,13 +17,14 @@ Sumber Refrensi:\
 Dengan sistem rekomendasi yang tepat sesuai dengan prefensi pengguna/pembaca di aplikasi webtoon, maka tingkat kepuasan seseorang terhadap aplikasi webtoon akan semakin tinggi. Line Corporate juga berpotensi menghasilkan keuntungan dengan fitur 'baca lebih awal'. Ketika seseorang sudah menikmati kisah di webtoon, maka pengguna rela juga membayar episode yang seharusnya tayang minggu depan agar bisa dibaca lebih awal.
 
 ### Problem Statements
-Metode apa yang digunakan untuk menentukan prefensi kesukaan suatu pembaca?
+* Metode apa yang digunakan untuk menentukan prefensi kesukaan suatu pembaca?
+* 
 
 ### Goals
-Rekomendasi judul komik lain yang mungkin disukai pembaca oleh berdasarkan kemiripan yang pernah dibaca .
+* Rekomendasi judul komik lain yang mungkin disukai pembaca oleh berdasarkan kemiripan yang pernah dibaca .
 
 ### Solution statements
-Pada proyek ini, saya membangun dengan model rekomendasi menggunakan cosine similarity. Definisi Cosine Similarity menurut [Referensi Jurnal](https://journal.unnes.ac.id/nju/index.php/jte/article/download/10955/6659) berikut adalah mengukur kemiripan antara dua dokumen atau teks. Pada Cosine Similarity dokumen atau teks dianggap sebagai vector. Tujuannya untuk mengukur kosinus sudut antara dua vektor dan menentukan apakah dua vektor menunjuk ke arah yang kira-kira sama. Lihat [Refrensi berikut](https://www.sciencedirect.com/topics/computer-science/cosine-similarity)
+Pada proyek ini, saya membangun dengan model rekomendasi menggunakan cosine similarity. Definisi Cosine Similarity menurut [Referensi Jurnal](https://journal.unnes.ac.id/nju/index.php/jte/article/download/10955/6659) berikut adalah mengukur kemiripan antara dua dokumen atau teks. Pada Cosine Similarity dokumen atau teks dianggap sebagai vector. Tujuannya untuk mengukur kosinus sudut antara dua vektor dan menentukan apakah dua vektor menunjuk ke arah yang kira-kira sama. Lihat [Referensi berikut](https://www.sciencedirect.com/topics/computer-science/cosine-similarity)
 
 ## Data Understanding
 [Dataset dari Kaggle](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)\
