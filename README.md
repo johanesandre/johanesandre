@@ -45,8 +45,8 @@ Input Variable:
 
 
 ## Data Preparation
-Data preparation yang kita lakukan adalah preprocessing dengan menghilangkan tanda baca. Pada dataset yang dipunya, kolom summary yang paling banyak mengandung tanda baca. Tujuanny untuk mendapatkan model yang lebih baik.\
-Selain itu, tahap persiapan data yang kita ubah tipe data text menjadi vector dengan CountVectorizer karena cosine similarity dasarnya adalah jarak antara dua vector.
+Data preparation yang kita lakukan adalah dengan menghilangkan tanda baca atau yang dikenal dengan nama punctuation. Tujuannya untuk mendapatkan pendekatan judul yang lebih baik. Target yang kami proses adalah kolom summary.\
+Kemudian masuk tahap persiapan data, yaitu mengubah tipe data text menjadi vector dengan fungsi CountVectorizer. Setelah text menjadi tipe data vector, lakukan maka data bisa diproses dengan algoritma cosine similarity.
 
 
 ## Modeling
