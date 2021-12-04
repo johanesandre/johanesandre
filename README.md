@@ -61,18 +61,18 @@ Hasil berikut merupakan contoh 10 rekomendasi judul webtoon yang didapat dengan 
 Ada 2 testcase judul yang diuji, yaitu: About Death & Delusion. About Death memiliki Genre Drama sedangkan Delusion Genre Thriler.
 
 ## TestCase 1
-Hasil top 10 rekomendasi dari judul 'About Death':
+Hasil top 10 rekomendasi dari judul 'About Death':\
 Karena anda menyukai webtoon  About Death mungkin kamu juga menyukai ini:\
-1.Death's Game	--Drama
-2. ShootAround	--Drama
-3. The Horizon	--Drama
-4. Gourmet Hound	--Drama
-5. Annarasumanara	--Drama
-6. Ghost Theater	--Drama
-7. Dark Mortal	--Drama
-8. Your Letter	--Drama
-9.  Days of Hana	--Drama
-10.  The Golden Spoon	--Drama
+1.Death's Game	--Drama\
+2. ShootAround	--Drama\
+3. The Horizon	--Drama\
+4. Gourmet Hound	--Drama\
+5. Annarasumanara	--Drama\
+6. Ghost Theater	--Drama\
+7. Dark Mortal	--Drama\
+8. Your Letter	--Drama\
+9. Days of Hana	--Drama\
+10.The Golden Spoon	--Drama
 
 Berdasarkan Genre, maka rekomendasi yg cocok untuk About game adalah **100% mirip**. Sekarang mari kita coba testcase ke 2
 
