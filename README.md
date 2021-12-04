@@ -75,17 +75,17 @@ Berdasarkan Genre, maka rekomendasi yg cocok untuk About game adalah 100% mirip.
 
 ## TestCase 2
 Hasil top 10 rekomendasi dari judul 'Delusion':\
-Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini:\
-1. Dear X	Thriller\
-2. Ctrl+Z	Thriller\
-3. Rotten	Thriller\
-4. Nightmare Factory	Thriller\
-5. FLOWAR	Sci-fi\
-6. Grasp	Thriller\
-7. Shriek	Thriller\
-8. Chiller	Thriller\
-9. Epilogue	Thriller\
-10. Bite Me	Thriller\
+Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini:
+1. Dear X	--Thriller\
+2. Ctrl+Z	--Thriller\
+3. Rotten	--Thriller\
+4. Nightmare Factory	--Thriller\
+5. FLOWAR	--Sci-fi\
+6. Grasp	--Thriller\
+7. Shriek	--Thriller\
+8. Chiller	--Thriller\
+9. Epilogue	--Thriller\
+10. Bite Me	--Thriller\
 
 Berdasarkan Genre, maka 9 dari 10 rekomendasi judul, yang mirip dengan genre Thrille adalah 9. Berarti precissionnya adalah:
 * **Precision: 90.00**\
