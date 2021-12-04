@@ -90,7 +90,7 @@ Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini:
 9. Epilogue	--Thriller
 10. Bite Me	--Thriller
 
-Berdasarkan Genre, maka 9 dari 10 rekomendasi judul, yang mirip dengan genre Thrille adalah 9. Berarti precissionnya adalah:
+Berdasarkan Genre, maka 9 dari 10 rekomendasi judul, yang mirip dengan genre Thrille adalah 90%. Perhitungan precissionnya adalah:
 * **Precision: 90.00**\
 Precision = TP/TP+FP
 
