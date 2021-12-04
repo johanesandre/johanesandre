@@ -55,39 +55,41 @@ Cosine similarity mengukur kesamaan antara dua vektor dan menentukan apakah kedu
 
 ## Evaluation
 Hasil berikut merupakan contoh 10 rekomendasi judul webtoon yang didapat dengan menggunakan metode Cosine Similarity.
-Ada 2 testcase judul yang diuji, yaitu: About Death & Delusion. About Death memiliki Genre Drama sedangkan Delusion Genre Thriler.
+Ada 2 testcase judul yang diuji, yaitu: About Death & Delusion. About Death memiliki Genre Drama sedangkan Delusion Genre Thriler.\n
 
-**TestCase 1
- Hasil top 10 rekomendasi dari judul 'About Death':
- Karena anda menyukai webtoon  About Death mungkin kamu juga menyukai ini: 
- 1.Death's Game	--Drama
- 2. ShootAround	--Drama
- 3. The Horizon	--Drama
- 4. Gourmet Hound	--Drama
- 5. Annarasumanara	--Drama
- 6. Ghost Theater	--Drama
- 7. Dark Mortal	--Drama
- 8. Your Letter	--Drama
- 9. Days of Hana	--Drama
- 10. The Golden Spoon	--Drama
+## TestCase 1
+Hasil top 10 rekomendasi dari judul 'About Death':\
+Karena anda menyukai webtoon  About Death mungkin kamu juga menyukai ini:\ 
+1.Death's Game	--Drama\
+2. ShootAround	--Drama\
+3. The Horizon	--Drama\
+4. Gourmet Hound	--Drama\
+5. Annarasumanara	--Drama\
+6. Ghost Theater	--Drama\
+7. Dark Mortal	--Drama\
+8. Your Letter	--Drama\
+9.  Days of Hana	--Drama\
+10.  The Golden Spoon	--Drama
 
 Berdasarkan Genre, maka rekomendasi yg cocok untuk About game adalah 100% mirip. Sekarang mari kita coba testcase 2
-**TestCase 2
-Hasil top 10 rekomendasi dari judul 'Delusion':
- Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini: 
-1. Dear X	Thriller
-2. Ctrl+Z	Thriller
-3. Rotten	Thriller
-4. Nightmare Factory	Thriller
-5. FLOWAR	Sci-fi
-6. Grasp	Thriller
-7. Shriek	Thriller
-8. Chiller	Thriller
-9. Epilogue	Thriller
-10. Bite Me	Thriller
+
+## TestCase 2
+Hasil top 10 rekomendasi dari judul 'Delusion':\
+Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini:\
+1. Dear X	Thriller\
+2. Ctrl+Z	Thriller\
+3. Rotten	Thriller\
+4. Nightmare Factory	Thriller\
+5. FLOWAR	Sci-fi\
+6. Grasp	Thriller\
+7. Shriek	Thriller\
+8. Chiller	Thriller\
+9. Epilogue	Thriller\
+10. Bite Me	Thriller\
 
 Berdasarkan Genre, maka 9 dari 10 rekomendasi judul, yang mirip dengan genre Thrille adalah 9. Berarti precissionnya adalah:
-
+* **Precision: 90.00**\
+Precision = TP/TP+FP
 
  
 **---Ini adalah bagian akhir laporan---**
