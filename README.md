@@ -71,7 +71,7 @@ Karena anda menyukai webtoon  About Death mungkin kamu juga menyukai ini:\
 9.  Days of Hana	--Drama\
 10.  The Golden Spoon	--Drama
 
-Berdasarkan Genre, maka rekomendasi yg cocok untuk About game adalah 100% mirip. Sekarang mari kita coba testcase 2
+Berdasarkan Genre, maka rekomendasi yg cocok untuk About game adalah **100% mirip**. Sekarang mari kita coba testcase 2
 
 ## TestCase 2
 Hasil top 10 rekomendasi dari judul 'Delusion':\
@@ -89,9 +89,10 @@ Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini:
 
 Berdasarkan Genre, maka 9 dari 10 rekomendasi judul, yang mirip dengan genre Thrille adalah 9. Berarti precissionnya adalah:
 * **Precision: 90.00**\
-Precision = TP/TP+FP
+Precision = TP/TP+FP\
 
- 
+Kesimpulan : Model Machine Learning yang dibangun untuk sistem rekomendasi Judul webtoon untuk pembaca bisa diterima.\
+
 **---Ini adalah bagian akhir laporan---**
 
 
