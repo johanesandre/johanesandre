@@ -1,16 +1,14 @@
 # Laporan Proyek Machine Learning – Johanes Andre
 
 ## Project Overview
-Proyek Domain di berada di Industri Entertainment khususnya di bidang seni/hiburan.
-Komik merupakan hiburan yang banyak digemari oleh anak muda di jaman sekarang. Selain cerita yang menarik, kemudahan akses melalui telepon genggam juga merupakan faktor tingginya minat di bidang ini. Webtoon adalah platform yang diluncurkan oleh LINE dan dapat diakses dengan gratis.
+Komik merupakan hiburan yang banyak digemari oleh anak muda di jaman sekarang. Selain cerita yang menarik, kemudahan akses melalui telepon genggam juga merupakan faktor tingginya minat di bidang ini. Webtoon adalah platform yang diluncurkan oleh LINE dan dapat diakses dengan gratis. Domain pada proyek ini berada di bidang industri entertainment khususnya di bidang seni/hiburan.
 
 Pada proyek ini, sistem rekomendasi yang dirancang menggunakan konsep Similarity Measure, yang berarti memberikan saran pengguna mungkin menyukai suatu judul komik berdasarkan yang dibacanya. Proyek ini menggunakan dataset berisi detail informasi komik dalam satu judul. Data ini didapatkan dari scrapping yang dilakukan oleh seorang user di Kaggle. Jumlah dataset yang didapat sekitar 568 data.
 
 Melalui model Machine Learning yang dibangun ini, diharapkan pengguna semakin menyukai aplikasi Webtoon dikarenakan rekomendasi yang diberikan tepat sesuai dengan yang mereka sukai. Dengan begitu pengguna lebih mudah dalam mencari hiburan sesuai dengan yang mereka suka.
 
 Sumber Refrensi:\
-[Dataset](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)
-[Papper](https://www.researchgate.net/publication/283148540_MBTI-based_Collaborative_Recommendation_System_A_Case_Study_of_Webtoon_Contents)
+Sumber dataset yang digunakan proyek ini diambil dari situs Kaggle oleh [Swarnim Rai](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset). Selain itu pernah ada penelitian serupa yang dilakukan oleh [Myeong-Yeon Yi](https://www.researchgate.net/publication/283148540_MBTI-based_Collaborative_Recommendation_System_A_Case_Study_of_Webtoon_Contents) di tahun 2016.
 
 
 ## Business Understanding
