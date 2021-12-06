@@ -26,7 +26,8 @@ Dengan sistem rekomendasi yang tepat sesuai dengan prefensi pengguna/pembaca di 
 Pada proyek ini, saya membangun dengan model rekomendasi menggunakan cosine similarity. Definisi Cosine Similarity menurut [Referensi Jurnal](https://journal.unnes.ac.id/nju/index.php/jte/article/download/10955/6659) berikut adalah mengukur kemiripan antara dua dokumen atau teks. Pada Cosine Similarity dokumen atau teks dianggap sebagai vector. Tujuannya untuk mengukur kosinus sudut antara dua vektor dan menentukan apakah dua vektor menunjuk ke arah yang kira-kira sama. Lihat [Referensi berikut](https://www.sciencedirect.com/topics/computer-science/cosine-similarity)
 
 ## Data Understanding
-[Dataset dari Kaggle](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)\
+[Dataset diambil dari Kaggle](https://www.kaggle.com/swarnimrai/webtoon-comics-dataset)\
+Data ini merupakan hasil dari scarping dari website webtoon.com secara langsung. Tujuan dari dataset ini sendiri untuk membangun sistem rekomendasi webtoon yang lebih baik ataupun pemebelajaran teknik analisis data.\
 Keseluruhan Total Data yang tersedia adalah 568 judul komik yang tiap data mempunyai 10 parameter yang akan dijelaskan sebagai berikut:
 
 Input Variable:
@@ -41,58 +42,67 @@ Input Variable:
 * Update - Informasi terbit setiap minggu di hari apa
 * Reading Link- link untuk membaca komik tersebut
 
+Berdasarkan data yang dimiliki, kita akan membangun sistem rekomendasi menggunakan data pada kolom Summary. Summary merupakan gambaran/ringkasan kisah pada judul suatu komik Webtoon. Hasil akhir dari dataset yang dibangun pada proyek ini merupakan pendekatan dari summary sesuai dengan prinsip Content-Based-Filtering.
 
 ## Data Preparation
-Data preparation yang kita lakukan adalah dengan menghilangkan tanda baca atau yang dikenal dengan nama punctuation. Tujuannya untuk mendapatkan pendekatan judul yang lebih baik. Target yang kami proses adalah kolom summary.\
-Kemudian masuk tahap persiapan data, yaitu mengubah tipe data text menjadi vector dengan fungsi CountVectorizer. Menurut Refrensi [berikut](https://ichi.pro/id/countvectorizer-dengan-python-42072304686163) CountVectorizer digunakan untuk mengonversi kumpulan dokumen teks menjadi vektor jumlah istilah / token. Ini juga memungkinkan pra-pemrosesan data teks sebelum menghasilkan representasi vektor. Fungsionalitas ini menjadikannya modul representasi fitur yang sangat fleksibel untuk teks. Setelah text menjadi tipe data vector, lakukan maka data bisa diproses ke tahap pemodelan machine learning.
+### Data Cleaning
+Tahap pertama pembersihan data yang kita lakukan adalah menghilangkan tanda baca atau yang dikenal dengan nama punctuation. Tujuannya untuk mendapatkan pendekatan judul yang lebih baik. Data utama/ Fitur yang dipilih untuk digunakan pada proses model machine learning pada proyek ini adalah kolom summary.
+
+### Data Transforms
+Kemudian masuk tahap persiapan data, yaitu mengubah tipe data text menjadi vector dengan fungsi CountVectorizer. Menurut Refrensi [berikut](https://ichi.pro/id/countvectorizer-dengan-python-42072304686163), CountVectorizer digunakan untuk mengonversi kumpulan dokumen teks menjadi vektor jumlah istilah/token. Hal Ini juga memungkinkan pra-pemrosesan data teks sebelum menghasilkan representasi vektor. Fungsionalitas ini menjadikannya modul representasi fitur yang sangat fleksibel untuk teks. Setelah text menjadi tipe data vector, lakukan maka data bisa diproses ke tahap pemodelan machine learning.
 
 
-## Modeling
-Model yang dirancang untuk menyelesaikan project ini dengan konsep content based filtering. Mengadopsi definisi dari refrensi [MTI BINUS](https://mti.binus.ac.id/2020/11/17/sistem-rekomendasi-content-based/), Content-based filtering adalah memberikan rekomendasi berdasarkan kemiripan atribut dari item atau barang yang disukai. Pada sistem rekomendasi lagu kemiripan berdasarkan atribut yang dimiliki oleh lagu seperti genre, beat, dll. Pada proyek ini, model similarity/kemiripan yang dipakai menggunapan cosine similiratiy.  Definisi dari [Jurnal Teknik Elektro](https://journal.unnes.ac.id/nju/index.php/jte/article/view/10955) cosine similarity merupakan metode untuk menghitung kesamaan antara dua buah objek yang dinyatakan dalam dua buah vector dengan menggunakan keywords (kata kunci) dari sebuah dokumen sebagai ukuran.Ia menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity.
+## Modeling & Result
+### Modeling
+Model yang dirancang untuk menyelesaikan project ini dengan menggunakan konsep Content based filtering. Mengadopsi definisi dari refrensi [MTI BINUS](https://mti.binus.ac.id/2020/11/17/sistem-rekomendasi-content-based/), Content-based filtering adalah memberikan rekomendasi berdasarkan kemiripan atribut dari item atau barang yang disukai. Pada sistem rekomendasi lagu kemiripan berdasarkan atribut yang dimiliki oleh lagu seperti genre, beat, dll. Pada proyek ini, model similarity/kemiripan yang dipakai menggunapan cosine similiratiy.  Definisi dari [Jurnal Teknik Elektro](https://journal.unnes.ac.id/nju/index.php/jte/article/view/10955) cosine similarity merupakan metode untuk menghitung kesamaan antara dua buah objek yang dinyatakan dalam dua buah vector dengan menggunakan keywords (kata kunci) dari sebuah dokumen sebagai ukuran.Ia menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity.
 
-Model ini dipilih karena biasa digunakan untuk mengukur kesamaan dokumen dalam analisis teks, salah satunya adalah sistem rekomendasi seperti [berikut](https://towardsdatascience.com/using-cosine-similarity-to-build-a-movie-recommendation-system-ae7f20842599#:~:text=Cosine%20similarity%20is%20a%20metric,the%20items%20are%20100%25%20similar.).
+Model ini dipilih karena biasa digunakan untuk mengukur kesamaan dokumen dalam analisis teks, salah satunya adalah sistem rekomendasi seperti [berikut](https://towardsdatascience.com/using-cosine-similarity-to-build-a-movie-recommendation-system-ae7f20842599#:~:text=Cosine%20similarity%20is%20a%20metric,the%20items%20are%20100%25%20similar.)
+
+### Result
+Pada proyek ini, hasil rekomendasi yang diberikan untuk pembaca adalah top-10 judul diurut dari yang paling memiliki skor tertinggi sesuai dengan judul yang telah dibaca olehnya.\
+Ada 2 testcase judul yang diuji, yaitu: About Death & Delusion. About Death memiliki Genre Drama sedangkan Delusion Genre Thriler. Hasil berikut merupakan contoh 10 rekomendasi judul webtoon yang didapat dengan menggunakan metode Cosine Similarity. 
+
+### TestCase 1
+Hasil top 10 rekomendasi dari judul 'About Death':\
+Karena anda menyukai webtoon  About Death mungkin kamu juga menyukai ini:
+- 1.Death's Game	--Drama
+- 2.ShootAround	--Drama
+- 3.The Horizon	--Drama
+- 4.Gourmet Hound	--Drama
+- 5.Annarasumanara	--Drama
+- 6.Ghost Theater	--Drama
+- 7.Dark Mortal	--Drama
+- 8.Your Letter	--Drama
+- 9.Days of Hana	--Drama
+- 10.The Golden Spoon	--Drama
+
+### TestCase 2
+Hasil top 10 rekomendasi dari judul 'Delusion':\
+Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini:
+- 1.Dear X	--Thriller
+- 2.Ctrl+Z	--Thriller
+- 3.Rotten	--Thriller
+- 4.Nightmare Factory --Thriller
+- 5.FLOWAR	--Sci-fi
+- 6.Grasp	--Thriller
+- 7.Shriek	--Thriller
+- 8.Chiller	--Thriller
+- 9.Epilogue	--Thriller
+- 10.Bite Me	--Thriller
 
 
 ## Evaluation
-Hasil berikut merupakan contoh 10 rekomendasi judul webtoon yang didapat dengan menggunakan metode Cosine Similarity. Dari top 10 rekomendasi yang didapat, kita dapat mengevaluasi hasil dengan metode precision. Menurut sumber [Towards Data Science](https://towardsdatascience.com/recommendation-systems-models-and-evaluation-84944a84fb8e), rumus untuk mencari precision adalah hasil rekomendasi yang relevan dibagi dengan total data yang direkomendasikan.
+Dari top 10 rekomendasi yang didapat, kita dapat mengevaluasi hasil dengan metode precision. Menurut sumber [Towards Data Science](https://towardsdatascience.com/recommendation-systems-models-and-evaluation-84944a84fb8e), rumus untuk mencari precision adalah hasil rekomendasi yang relevan dibagi dengan total data yang direkomendasikan dikalikan 100%. atau bisa dituliskan dengan formula berikut:\
+Precision = Total Hasil Rekomendasi Yang relevan / Total Hasil  * 100 %
 
-Ada 2 testcase judul yang diuji, yaitu: About Death & Delusion. About Death memiliki Genre Drama sedangkan Delusion Genre Thriler.
+### Evaluasi Testcase 1 -- Judul About Death
+Berdasarkan Genre, maka nilai precisionnya adalah : (10/10) * 100% =  **100%**.
 
-## TestCase 1
-Hasil top 10 rekomendasi dari judul 'About Death':\
-Karena anda menyukai webtoon  About Death mungkin kamu juga menyukai ini:\
-1.Death's Game	--Drama\
-2. ShootAround	--Drama\
-3. The Horizon	--Drama\
-4. Gourmet Hound	--Drama\
-5. Annarasumanara	--Drama\
-6. Ghost Theater	--Drama\
-7. Dark Mortal	--Drama\
-8. Your Letter	--Drama\
-9. Days of Hana	--Drama\
-10.The Golden Spoon	--Drama
+### Evaluasi Testcase 2 -- Judul Delusion
+Berdasarkan Genre, maka nilai precisionnya adalah : (09/10) * 100% =  **90%**.
 
-Berdasarkan Genre, maka rekomendasi yg cocok untuk About game adalah **100% mirip**. Sekarang mari kita coba testcase ke 2
-
-## TestCase 2
-Hasil top 10 rekomendasi dari judul 'Delusion':\
-Karena anda menyukai webtoon Delusion mungkin kamu juga menyukai ini:
-1. Dear X	--Thriller
-2. Ctrl+Z	--Thriller
-3. Rotten	--Thriller
-4. Nightmare Factory --Thriller
-5. FLOWAR	--Sci-fi
-6. Grasp	--Thriller
-7. Shriek	--Thriller
-8. Chiller	--Thriller
-9. Epilogue	--Thriller
-10. Bite Me	--Thriller
-
-Berdasarkan Genre, maka 9 dari 10 rekomendasi judul, yang mirip dengan genre Thrille adalah 90%. Perhitungan precissionnya adalah:
-* **Precision: 90.00**\
-Precision = TP/TP+FP
-
-Kesimpulan : Model Machine Learning yang dibangun untuk sistem rekomendasi Judul webtoon untuk pembaca bisa diterima.
+### Kesimpulan
+Model Machine Learning yang dibangun untuk sistem rekomendasi Judul webtoon untuk pembaca bisa diterima.
 
 **---Ini adalah bagian akhir laporan---**
 
