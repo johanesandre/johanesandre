@@ -15,12 +15,12 @@ Sumber dataset yang digunakan proyek ini diambil dari situs Kaggle oleh [Swarnim
 Dengan sistem rekomendasi yang tepat sesuai dengan prefensi pengguna/pembaca di aplikasi webtoon, maka tingkat kepuasan seseorang terhadap aplikasi webtoon akan semakin tinggi. Line Corporate juga berpotensi menghasilkan keuntungan dengan fitur 'baca lebih awal'. Ketika seseorang sudah menikmati kisah di webtoon, maka pengguna rela juga membayar episode yang seharusnya tayang minggu depan agar bisa dibaca lebih awal.
 
 ### Problem Statements
-* Apa rekomendasi judul yang cocok untuk para pembaca webtoon?
-* Bagaimana metode menetapkan rekomendasi judul untuk pembaca webtoon?
+* Berapa jumlah rekomendasi judul yang diberikan untuk pembaca webtoon?
+* Bagaimana model yang dibangun untuk sistem rekomendasi judul untuk pembaca webtoon?
 
 ### Goals
-* Pembaca mendapat 3 judul rekomendasi berdasarkan judul yang pernah dibaca.
-* Model machine learning untuk menentukan rekomendasi judul berdasarkan historis bacaannya melalui pendekatna cosine similarity.
+* Pembaca akan mendapat 10 judul rekomendasi berdasarkan judul yang pernah dibaca yang di ranking berdasarkan kemiripan skor tertinggi.
+* Model machine learning yang dibangun untuk menentukan rekomendasi judul webtoon adalah dengan menggunakan konsep Content-Based-Filtering yang diimplementasikan berdasarkan kecocokan data summary dari judul yang pernah dibaca oleh pembaca.
 
 ### Solution statements
 Pada proyek ini, saya membangun dengan model rekomendasi menggunakan cosine similarity. Definisi Cosine Similarity menurut [Referensi Jurnal](https://journal.unnes.ac.id/nju/index.php/jte/article/download/10955/6659) berikut adalah mengukur kemiripan antara dua dokumen atau teks. Pada Cosine Similarity dokumen atau teks dianggap sebagai vector. Tujuannya untuk mengukur kosinus sudut antara dua vektor dan menentukan apakah dua vektor menunjuk ke arah yang kira-kira sama. Lihat [Referensi berikut](https://www.sciencedirect.com/topics/computer-science/cosine-similarity)
